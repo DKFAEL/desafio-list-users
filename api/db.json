@@ -1,0 +1,13 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "cpf": "123.456.789-00",
+        "celular": "555-555-5555",
+        "tipoContato": "celular"
+      }
+    ]
+  }
+  

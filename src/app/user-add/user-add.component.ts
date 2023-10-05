@@ -16,6 +16,7 @@ export class UserAddComponent implements OnInit {
     email: '',
     cpf: '',
     celular: '',
+    tipoContato: 'celular'
   };
   modalTitle: string = 'Adicionar Usuário';
 

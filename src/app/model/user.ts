@@ -4,5 +4,6 @@ export interface User {
     email: string;
     cpf: string;
     celular: string;
+    tipoContato: string
   }
   

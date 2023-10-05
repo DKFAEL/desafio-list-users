@@ -1,18 +1,35 @@
-<!-- edit-user-modal.component.html -->
-<h2>Editar Usuário</h2>
+
+<h2 class="title">{{modalTitle}}</h2>
 <form (submit)="onSubmit()">
-  <mat-form-field>
-    <input matInput placeholder="Nome" [(ngModel)]="user.name" name="name" required>
+  <div class="form">
+  <mat-form-field class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput  [(ngModel)]="user.name" name="name" required>
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Email" [(ngModel)]="user.email" name="email" required>
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="user.email" name="email" required>
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="CPF" [(ngModel)]="user.cpf" name="cpf" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Celular" [(ngModel)]="user.celular" name="celular" required>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Salvar</button>
-  <button  class="cancel-button" (click)="Close()" >Cancelar</button>
+  <div class="tri-width">
+    <mat-form-field class="cpf">
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="user.cpf" name="cpf" required>
+    </mat-form-field>
+    
+    <mat-form-field class="" id="tel">
+      <mat-label>Número do Telefone</mat-label>
+      <input matInput  [(ngModel)]="user.celular" name="celular" required>
+    </mat-form-field>
+    <mat-form-field class="full-widt typecontato">
+      <mat-label>Tipo de Contato</mat-label>
+      <mat-select [(ngModel)]="user.tipoContato" name="tipoContato">
+        <mat-option value="fixo">FIXO</mat-option>
+        <mat-option value="celular">CELULAR</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+  </div>
+</div>
+  <button mat-raised-button color="primary" type="submit" class="btn-submit">ATUALIZAR</button>
+  <button class="btn-close" (click)="Close()">CANCELAR</button>
 </form>

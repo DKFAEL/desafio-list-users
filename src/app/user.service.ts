@@ -8,12 +8,14 @@ export class UserService {
   
   private users: User[] = [
     {
-      id: 0,
+      id: 1,
       name: 'John Doe',
       email: 'john.doe@example.com',
       cpf: '123.456.789-00',
       celular: '555-555-5555',
+      tipoContato: 'Celular'
     },
+    
     
   ];
 
@@ -23,9 +25,23 @@ export class UserService {
     return this.users;
   }
 
-  getUserById(userId: number): User | undefined {
-    return this.users.find((user) => user.id === userId);
+  getUserById(userId: number): User {
+    const user = this.users.find((user) => user.id === userId);
+    if (user) {
+      return user;
+    }
+    // Se o usuário não for encontrado, retorne um usuário vazio ou trate de outra maneira
+    return {
+      id: 0, // Defina um ID padrão
+      name: '',
+      email: '',
+      cpf: '',
+      celular: '',
+      tipoContato: ''
+    };
   }
+  
+  
 
   addUser(user: User) {
     user.id = this.generateId();

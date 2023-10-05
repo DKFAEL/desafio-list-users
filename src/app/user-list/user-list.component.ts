@@ -24,7 +24,8 @@ export class UserListComponent implements OnInit {
 
   openAddUserModal(): void {
     const dialogRef = this.dialog.open(UserAddComponent, {
-      width: '400px', // Defina o tamanho do modal
+      width: '800px', // Defina o tamanho do modal
+      height:'340px'
     });
   
     dialogRef.afterClosed().subscribe(result => {
@@ -32,13 +33,19 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  openEditUserModal(): void {
+  openEditUserModal(userId: number): void {
     const dialogRef = this.dialog.open(UserEditComponent, {
-      width: '400px', // Defina o tamanho do modal
+      width: '800px',
+      height: '340px',
+      data: { userId }, // Passando o ID do usuário para o componente de edição
     });
   
     dialogRef.afterClosed().subscribe(result => {
       // Processar os dados quando o modal for fechado, se necessário
     });
   }
+  
+  
+    
+  
 }

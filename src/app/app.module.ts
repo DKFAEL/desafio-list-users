@@ -6,22 +6,26 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './component/header/header.component'
 import { UserListComponent } from './user-list/user-list.component';
-import { AppRoutingModule } from './app-routing.module';
 import { UserAddComponent } from './user-add/user-add.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    UserAddComponent,
     HeaderComponent,
-    UserEditComponent
+    UserListComponent,
+    UserEditComponent,
+    UserAddComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     MatFormFieldModule,
     MatToolbarModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
