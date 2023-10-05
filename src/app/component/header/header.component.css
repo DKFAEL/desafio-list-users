@@ -1,0 +1,45 @@
+mat-toolbar {
+    /* display: flex;
+    align-items: center; */
+    background: rgb(62, 61, 61);
+}
+
+.menu{
+    color: #f1f1f1;
+}
+
+span {
+    margin-left: 10px;
+    color:#f1f1f1;
+}
+/* Estilize o campo de pesquisa */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    margin-left: 15%;
+  }
+  
+  .search-field {
+    display: flex;
+    align-items: center;
+    background-color: rgba(113, 104, 104, 0.438); /* Cor de fundo do campo */
+    border-radius: 4px;
+    padding: 8px;
+    width: 130%; /* Aumente em 30% */
+  }
+  
+  .search-field i {
+    color: #f0f0f0;
+  }
+
+  /* Estilize o campo de pesquisa de texto */
+  input {
+    border: none; /* Remova a borda */
+    background: transparent;
+    color: #f0f0f0; /* Cor do texto */
+    outline: none; /* Remova o contorno ao focar */
+    width: 100%; /* Ocupa todo o espaço disponível */
+  }
+  
+

@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="user-list">
+  <h1 class="title">Usuários cadastrados</h1>
+  <a mat-mini-fab class="btn-new " >
+    <i class="material-icons buttonAdd" (click)="openAddUserModal()">add</i>
+  </a>
+  <div class="user-card" *ngFor="let user of users">
+    <div class="custom-card">
+      <div class="user-info">
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.email }}</p>
+        <!-- <p>{ user.cpf }}</p>
+        <p>{{ user.celular }}</p> -->
+        <a><i class="material-icons buttonEdit" (click)="openEditUserModal()">edit </i></a>
+      </div>
+
+    </div>
+  </div>
+</div>

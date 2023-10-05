@@ -1,0 +1,25 @@
+<div class="user-edit">
+    <h1>{{ modalTitle }}</h1>
+    <form (submit)="onSubmit()">
+      <mat-form-field class="user-form-field">
+        <input matInput placeholder="Name" [(ngModel)]="user.name" name="name" required>
+      </mat-form-field>
+      
+      <mat-form-field class="user-form-field">
+        <input matInput placeholder="Email" [(ngModel)]="user.email" name="email" required>
+      </mat-form-field>
+      
+      <mat-form-field class="user-form-field">
+        <input matInput placeholder="CPF" [(ngModel)]="user.cpf" name="cpf" required>
+      </mat-form-field>
+      
+      <mat-form-field class="user-form-field">
+        <input matInput placeholder="Celular" [(ngModel)]="user.celular" name="celular" required>
+      </mat-form-field>
+      
+  
+      <button type="submit" class="save-button">Salvar</button>
+      <button  class="cancel-button" (click)="Close()" >Cancelar</button>
+    </form>
+  </div>
+      

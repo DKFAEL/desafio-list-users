@@ -1,0 +1,51 @@
+
+.title {
+ font-size: 1.3rem;
+ font-weight: 500;
+ margin-left: 9%;
+ margin-top: 2%;
+ color: rgb(45, 44, 44);
+}
+
+.custom-card {
+  width: 85%;
+  height: 60px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 10px;
+  }
+
+  .buttonAdd {
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: rgb(212, 52, 52);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 95%;
+}
+
+.buttonEdit {
+    text-decoration: none;
+    cursor: pointer;
+    color: #292929
+  
+  }
+  
+  .buttonEdit:hover {
+    color: rgb(212, 52, 52);
+  } 
+
