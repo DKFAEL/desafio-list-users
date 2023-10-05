@@ -19,33 +19,46 @@ export class UserListComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers().subscribe((users) => {
+      this.users = users;
+    });
   }
 
   openAddUserModal(): void {
     const dialogRef = this.dialog.open(UserAddComponent, {
-      width: '800px', // Defina o tamanho do modal
-      height:'340px'
+      width: '800px',
+      height: '340px'
     });
   
-    dialogRef.afterClosed().subscribe(result => {
-      // Processar os dados quando o modal for fechado, se necessário
+    dialogRef.afterClosed().subscribe((result) => {
+      // Após a adição de um usuário, atualize a lista de usuários
+      this.userService.getUsers().subscribe((users) => {
+        this.users = users;
+      });
     });
   }
-
+  
   openEditUserModal(userId: number): void {
     const dialogRef = this.dialog.open(UserEditComponent, {
       width: '800px',
       height: '340px',
-      data: { userId }, // Passando o ID do usuário para o componente de edição
+      data: { userId },
     });
   
-    dialogRef.afterClosed().subscribe(result => {
-      // Processar os dados quando o modal for fechado, se necessário
+    dialogRef.afterClosed().subscribe((result) => {
+      // Após a edição de um usuário, atualize a lista de usuários
+      this.userService.getUsers().subscribe((users) => {
+        this.users = users;
+      });
     });
   }
-  
-  
-    
-  
+
+  deleteUser(userId: number): void {
+    if (confirm('Tem certeza de que deseja excluir este usuário?')) {
+      this.userService.deleteUser(userId).subscribe((result) => {
+        // Remova o usuário da lista após a exclusão
+        this.users = this.users.filter((user) => user.id !== userId);
+      });
+    }
+  }
 }

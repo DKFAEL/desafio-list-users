@@ -1,13 +1,20 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "cpf": "123.456.789-00",
-        "celular": "555-555-5555",
-        "tipoContato": "celular"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": 2,
+      "name": "Lucas Silva",
+      "email": "rafadevxp@gmail.com",
+      "cpf": "",
+      "celular": "",
+      "tipoContato": "celular"
+    },
+    {
+      "id": 3,
+      "name": "Rafael Nunes",
+      "email": "rafadevxp@gmail.com",
+      "cpf": "079.837.155-28",
+      "celular": "71988211085",
+      "tipoContato": "celular"
+    }
+  ]
+}

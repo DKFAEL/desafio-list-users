@@ -31,12 +31,12 @@ export class UserAddComponent implements OnInit {
   }
 
   onSubmit(): void {
-   // Lógica para adicionar um usuário
-   this.userService.addUser(this.user);
-   this.router.navigate(['/users']);
-
-     // Fechar o modal após a adição de usuário
-  this.dialogRef.close();
+    // Lógica para adicionar um usuário
+    this.userService.addUser(this.user).subscribe(
+      (response) => {
+        this.dialogRef.close(); // Fechar o modal após a adição de usuário
+      }
+    );
   }
 
 

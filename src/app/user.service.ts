@@ -1,64 +1,37 @@
+// user.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { User } from './model/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  
-  private users: User[] = [
-    {
-      id: 1,
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      cpf: '123.456.789-00',
-      celular: '555-555-5555',
-      tipoContato: 'Celular'
-    },
-    
-    
-  ];
+  private usersUrl = 'http://localhost:3000/users';
 
-  private currentId = 2; // Inicialize o contador com 1
+  constructor(private http: HttpClient) {}
 
-  getUsers(): User[] {
-    return this.users;
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);
   }
 
-  getUserById(userId: number): User {
-    const user = this.users.find((user) => user.id === userId);
-    if (user) {
-      return user;
-    }
-    // Se o usuário não for encontrado, retorne um usuário vazio ou trate de outra maneira
-    return {
-      id: 0, // Defina um ID padrão
-      name: '',
-      email: '',
-      cpf: '',
-      celular: '',
-      tipoContato: ''
-    };
-  }
-  
-  
-
-  addUser(user: User) {
-    user.id = this.generateId();
-    this.users.push(user);
+  getUserById(userId: number): Observable<User> {
+    const url = `${this.usersUrl}/${userId}`;
+    return this.http.get<User>(url);
   }
 
-  editUser(user: User) {
-    const index = this.users.findIndex((u) => u.id === user.id);
-    if (index !== -1) {
-      this.users[index] = user;
-    }
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.usersUrl, user);
   }
 
-private generateId(): number {
-  const uniqueId = this.currentId;
-  this.currentId++; // Incrementa o contador para o próximo ID único
-  return uniqueId;
-}
+  editUser(user: User): Observable<User> {
+    const url = `${this.usersUrl}/${user.id}`;
+    return this.http.put<User>(url, user);
+  }
 
+  deleteUser(userId: number): Observable<void> {
+    const url = `${this.usersUrl}/${userId}`;
+    return this.http.delete<void>(url);
+  }
 }
