@@ -1,35 +1,41 @@
-
-<h2 class="title">{{modalTitle}}</h2>
-<form (submit)="onSubmit()">
+<h2 class="title">{{ modalTitle }}</h2>
+<form [formGroup]="formUser" (submit)="onSubmit()">
   <div class="form">
-  <mat-form-field class="full-width">
-    <mat-label>Name</mat-label>
-    <input matInput  [(ngModel)]="user.name" name="name" required>
-  </mat-form-field>
-  <mat-form-field class="full-width">
-    <mat-label>Email</mat-label>
-    <input matInput [(ngModel)]="user.email" name="email" required>
-  </mat-form-field>
-  <div class="tri-width">
-    <mat-form-field class="cpf">
-      <mat-label>CPF</mat-label>
-      <input matInput [(ngModel)]="user.cpf" name="cpf" required>
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="formUser.get('name')?.hasError('required')">Nome é obrigatório</mat-error>
+      <mat-error *ngIf="formUser.get('name')?.hasError('maxlength')">Nome não pode ter mais de 30 caracteres</mat-error>
     </mat-form-field>
-    
-    <mat-form-field class="" id="tel">
-      <mat-label>Número do Telefone</mat-label>
-      <input matInput  [(ngModel)]="user.celular" name="celular" required>
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="formUser.get('email')?.hasError('required')">Email é obrigatório</mat-error>
+      <mat-error *ngIf="formUser.get('email')?.hasError('email')">Formato de email inválido</mat-error>
     </mat-form-field>
-    <mat-form-field class="full-widt typecontato">
-      <mat-label>Tipo de Contato</mat-label>
-      <mat-select [(ngModel)]="user.tipoContato" name="tipoContato">
-        <mat-option value="fixo">FIXO</mat-option>
-        <mat-option value="celular">CELULAR</mat-option>
-      </mat-select>
-    </mat-form-field>
-    
+    <div class="tri-width">
+      <mat-form-field class="cpf">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf">
+        <mat-error *ngIf="formUser.get('cpf')?.hasError('required')">CPF é obrigatório</mat-error>
+        <mat-error *ngIf="formUser.get('cpf')?.hasError('pattern')">Formato de CPF inválido</mat-error>
+      </mat-form-field>
+      <mat-form-field class="" id="tel">
+        <mat-label>Número do Telefone</mat-label>
+        <input matInput formControlName="celular">
+        <mat-error *ngIf="formUser.get('celular')?.hasError('required')">Número é obrigatório</mat-error>
+        <mat-error *ngIf="formUser.get('celular')?.hasError('minlength')">Mínimo de 10 dígitos</mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width typecontato">
+        <mat-label>Tipo de Contato</mat-label>
+        <mat-select formControlName="tipoContato">
+          <mat-option value="fixo">FIXO</mat-option>
+          <mat-option value="celular">CELULAR</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formUser.get('tipoContato')?.hasError('required')">Tipo de contato é obrigatório</mat-error>
+      </mat-form-field>
+    </div>
   </div>
-</div>
-  <button mat-raised-button color="primary" type="submit" class="btn-submit">ATUALIZAR</button>
-  <button class="btn-close" (click)="Close()">CANCELAR</button>
 </form>
+<button mat-raised-button color="primary" type="submit" class="btn-submit" [disabled]="formUser.invalid" >ATUALIZAR</button>
+<button class="btn-close" (click)="onCancel()">CANCELAR</button>

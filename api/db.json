@@ -2,18 +2,34 @@
   "users": [
     {
       "id": 2,
-      "name": "Lucas Silva",
+      "name": "lUzzz",
       "email": "rafadevxp@gmail.com",
-      "cpf": "",
-      "celular": "",
+      "cpf": "079.837.155-28",
+      "celular": "71981295803",
       "tipoContato": "celular"
     },
     {
       "id": 3,
+      "name": "Lalauu",
+      "email": "rafadevxp@gmail.com",
+      "cpf": "078.817.135-28",
+      "celular": "71988211085",
+      "tipoContato": "celular"
+    },
+    {
+      "id": 4,
       "name": "Rafael Nunes",
       "email": "rafadevxp@gmail.com",
       "cpf": "079.837.155-28",
       "celular": "71988211085",
+      "tipoContato": "celular"
+    },
+    {
+      "id": 5,
+      "name": "Lu",
+      "email": "lu@gmail.com",
+      "cpf": "079.837.155-28",
+      "celular": "71981295803",
       "tipoContato": "celular"
     }
   ]
