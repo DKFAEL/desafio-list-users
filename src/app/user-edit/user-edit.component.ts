@@ -71,6 +71,7 @@ export class UserEditComponent {
     }
   }
 
+  // Fechar o modal
   onCancel(): void {
     this.dialogRef.close();
   }

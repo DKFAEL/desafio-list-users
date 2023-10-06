@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 2,
-      "name": "lUzzz",
+      "name": "lUzzz\\aa",
       "email": "rafadevxp@gmail.com",
       "cpf": "079.837.155-28",
       "celular": "71981295803",
@@ -13,14 +13,6 @@
       "name": "Lalauu",
       "email": "rafadevxp@gmail.com",
       "cpf": "078.817.135-28",
-      "celular": "71988211085",
-      "tipoContato": "celular"
-    },
-    {
-      "id": 4,
-      "name": "Rafael Nunes",
-      "email": "rafadevxp@gmail.com",
-      "cpf": "079.837.155-28",
       "celular": "71988211085",
       "tipoContato": "celular"
     },

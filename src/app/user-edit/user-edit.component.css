@@ -52,7 +52,9 @@
   }
 
 .btn-close{
-    margin-top: 10px;
+    position: absolute;
+    top: 80.5%;
+    left: 17%;
     margin-left: 20px;
     background-color: #f54f59;
     color: #FFFFFF;
@@ -68,5 +70,7 @@
 .btn-close:hover{
     background-color: #d03a44;
 }
+
+
 
 

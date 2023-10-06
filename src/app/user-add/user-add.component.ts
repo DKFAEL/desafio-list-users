@@ -57,6 +57,7 @@ export class UserAddComponent implements OnInit {
     }
   }
 
+  // Fechar o modal 
   onCancel(): void {
     this.dialogRef.close();
   }
