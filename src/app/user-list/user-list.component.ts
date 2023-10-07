@@ -61,4 +61,18 @@ export class UserListComponent implements OnInit {
       });
     }
   }
+
+  searchUsers(searchValue: string): void {
+    this.userService.getUsers().subscribe((users) => {
+      if (searchValue && searchValue.trim() !== '') {
+        // Filtrar usuários com base no valor da pesquisa
+        users = users.filter((user) => {
+          return user.name.toLowerCase().includes(searchValue.toLowerCase());
+        });
+      }
+  
+      this.users = users;
+    });
+  }
+  
 }
