@@ -1,27 +1,61 @@
 # AttornatusFrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Descrição
 
-## Code scaffolding
+Este é um aplicativo de gerenciamento de usuários construído com Angular para o front-end e o JSON Server para criar uma API REST fake.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pré-requisitos
 
-## Build
+Antes de executar o aplicativo, você deve ter as seguintes dependências instaladas:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://cli.angular.io/)
+- [JSON Server](https://github.com/typicode/json-server)
 
-## Running unit tests
+## Instalação e Execução
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Siga estas etapas para executar o aplicativo:
 
-## Running end-to-end tests
+1. Clone este repositório:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   git clone https://github.com/seu-usuario/user-management-app.git
+   ```
 
-## Further help
+2. Navegue até o diretório do projeto:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   
+
+3. Instale as dependências do Angular:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o JSON Server para simular uma API REST falsa (Certifique-se de está dentro da pasta correta):
+
+   ```bash
+   json-server --watch db.json
+   ```
+
+5. Inicie o aplicativo:
+
+   ```bash
+   ng serve
+   ```
+
+6. Abra o aplicativo em seu navegador:
+
+   [http://localhost:4200/](http://localhost:4200/)
+
+Agora você pode usar o aplicativo para gerenciar usuários.
+
+## Recursos
+
+- Adicionar um novo usuário com informações como nome, email, CPF, celular e tipo de contato.
+- Editar os detalhes de um usuário existente.
+- Excluir um usuário.
+- Listar todos os usuários cadastrados.
+
